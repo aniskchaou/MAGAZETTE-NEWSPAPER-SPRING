@@ -1,0 +1,38 @@
+
+
+<form th:action="@{/updatesettings/{id}(id=${settings.id})}"
+	th:object="${settings}" method="post">
+
+	<div class="form-group">
+		<label for="exampleInputEmail1">name</label> <input
+			th:value="${settings.name}" name="description" type="text"
+			class="form-control" id="exampleInputEmail1"
+			aria-describedby="emailHelp" placeholder="Enter email">
+	</div>
+	
+	<div class="form-group">
+		<label for="exampleInputEmail1">email</label> <input
+			th:value="${settings.email}" name="description" type="text"
+			class="form-control" id="exampleInputEmail1"
+			aria-describedby="emailHelp" placeholder="Enter email">
+	</div>
+	
+	<div class="form-group">
+		<label for="exampleInputEmail1">Image</label> <input
+			th:value="${settings.image}" name="description" type="text"
+			class="form-control" id="exampleInputEmail1"
+			aria-describedby="emailHelp" placeholder="Enter email">
+	</div>
+	
+	<div class="form-group">
+		<label for="exampleInputEmail1">language</label> <input
+			th:value="${settings.language}" name="description" type="text"
+			class="form-control" id="exampleInputEmail1"
+			aria-describedby="emailHelp" placeholder="Enter email">
+	</div>
+
+
+	<button type="submit" class="btn btn-primary">Edit</button>
+
+
+</form>

@@ -1,0 +1,54 @@
+
+<form th:action="@{/updateblog/{id}(id=${post.id})}"
+	th:object="${post}" method="post">
+
+	<div class="form-group">
+		<label for="exampleInputEmail1">title</label> <input
+			th:value="${post.title}" name="title" type="text"
+			class="form-control" id="exampleInputEmail1"
+			aria-describedby="emailHelp" placeholder="Enter email">
+	</div>
+	
+	<div class="form-group">
+		<label for="exampleInputEmail1">slug</label> <input
+			th:value="${post.slug}" name="slug" type="text"
+			class="form-control" id="exampleInputEmail1"
+			aria-describedby="emailHelp" placeholder="Enter email">
+	</div>
+	
+	<div class="form-group">
+		<label for="exampleInputEmail1">description</label> <input
+			th:value="${post.description}" name="description" type="text"
+			class="form-control" id="exampleInputEmail1"
+			aria-describedby="emailHelp" placeholder="Enter email">
+	</div>
+	
+	
+	<div class="form-group">
+		<label for="exampleInputEmail1">content</label> <input
+			th:value="${post.content}" name="content" type="text"
+			class="form-control" id="exampleInputEmail1"
+			aria-describedby="emailHelp" placeholder="Enter email">
+	</div>
+	
+	
+	<div class="form-group">
+		<label for="exampleInputEmail1">category</label> <input
+			th:value="${post.category}" name="category" type="text"
+			class="form-control" id="exampleInputEmail1"
+			aria-describedby="emailHelp" placeholder="Enter email">
+	</div>
+	
+	
+	<div class="form-group">
+		<label for="exampleInputEmail1">image</label> <input
+			th:value="${post.image}" name="image" type="text"
+			class="form-control" id="exampleInputEmail1"
+			aria-describedby="emailHelp" placeholder="Enter email">
+	</div>
+
+
+	<button type="submit" class="btn btn-primary">Edit</button>
+
+
+</form>

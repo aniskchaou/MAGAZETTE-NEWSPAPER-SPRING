@@ -1,0 +1,128 @@
+
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Form Validation - Inline validation is very easy to
+	implement using the Architect Framework.</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+<meta name="description"
+	content="Inline validation is very easy to implement using the Architect Framework.">
+<meta name="msapplication-tap-highlight" content="no">
+<!--
+    =========================================================
+    * ArchitectUI HTML Theme Dashboard - v1.0.0
+    =========================================================
+    * Product Page: https://dashboardpack.com
+    * Copyright 2019 DashboardPack (https://dashboardpack.com)
+    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
+    =========================================================
+    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    -->
+<link href="main.css" rel="stylesheet">
+</head>
+<body>
+	<div
+		class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+
+
+
+		<div th:insert="includes/admin_header_bar :: admin_header_bar"></div>
+
+		<div class="app-main">
+
+			<div
+				th:insert="includes/admin_navigation_menu :: admin_navigation_menu"></div>
+			<div class="app-main__outer">
+				<div class="app-main__inner">
+					<div class="app-page-title">
+						<div class="page-title-wrapper">
+							<div class="page-title-heading">
+								<div class="page-title-icon">
+									<i class="lnr-picture text-danger"> </i>
+								</div>
+								<div>
+									Create Category
+									<div class="page-title-subheading">Inline validation is
+										very easy to implement using the Architect Framework.</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="main-card mb-3 card">
+						<div class="card-body">
+							<form class="needs-validation" novalidate
+								th:action="@{/createcategory}" method="post">
+								<div class="form-row">
+									<div class="col-md-4 mb-3">
+										<label for="validationCustom01">Category Name</label> <input
+											type="text" class="form-control" id="validationCustom01"
+											placeholder="First name" name="CategoryName" required>
+										<div class="valid-feedback">Looks good!</div>
+									</div>
+
+
+								</div>
+
+
+								<button class="btn btn-primary" type="submit">Create
+									</button>
+							</form>
+
+							<script>
+								// Example starter JavaScript for disabling form submissions if there are invalid fields
+								(function() {
+									'use strict';
+									window
+											.addEventListener(
+													'load',
+													function() {
+														// Fetch all the forms we want to apply custom Bootstrap validation styles to
+														var forms = document
+																.getElementsByClassName('needs-validation');
+														// Loop over them and prevent submission
+														var validation = Array.prototype.filter
+																.call(
+																		forms,
+																		function(
+																				form) {
+																			form
+																					.addEventListener(
+																							'submit',
+																							function(
+																									event) {
+																								if (form
+																										.checkValidity() === false) {
+																									event
+																											.preventDefault();
+																									event
+																											.stopPropagation();
+																								}
+																								form.classList
+																										.add('was-validated');
+																							},
+																							false);
+																		});
+													}, false);
+								})();
+							</script>
+						</div>
+					</div>
+
+				</div>
+
+				<div th:insert="includes/admin_footer :: admin_footer"></div>
+
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="assets/scripts/main.js"></script>
+</body>
+</html>

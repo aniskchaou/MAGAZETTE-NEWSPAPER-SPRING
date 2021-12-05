@@ -1,0 +1,22 @@
+
+<div class="position-relative mb-3" th:fragment="news_detail">
+	<img class="img-fluid w-100" src="/img/news-700x435-2.jpg"
+		style="object-fit: cover;">
+	<div class="overlay position-relative bg-light">
+		<div class="mb-3">
+			<a href="" th:text="${post.category.CategoryName}">Technology</a> <span class="px-1">/</span> <span>January
+				01, 2045</span>
+		</div>
+		<div>
+			<h3 class="mb-3" th:text="${post.title}">Est stet amet ipsum stet clita rebum duo</h3>
+			<p th:text="${post.content}">Sadipscing labore amet rebum est et justo gubergren. Et eirmod
+				ipsum sit diam ut magna lorem. Nonumy vero labore lorem sanctus
+				rebum et lorem magna kasd, stet amet magna accusam consetetur
+				eirmod. Kasd accusam sit ipsum sadipscing et at at sanctus et. Ipsum
+				sit gubergren dolores et, consetetur justo invidunt at et aliquyam
+				ut et vero clita. Diam sea sea no sed dolores diam nonumy, gubergren
+				sit stet no diam kasd vero.</p>
+
+		</div>
+	</div>
+</div>

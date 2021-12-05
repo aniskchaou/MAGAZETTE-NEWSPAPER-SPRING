@@ -1,0 +1,15 @@
+<form th:action="@{/updatecategory/{id}(id=${category.id})}"
+	th:object="${category}" method="post">
+
+	<div class="form-group">
+		<label for="exampleInputEmail1">Category Name</label> <input
+			th:value="${category.CategoryName}" name="CategoryName" type="text"
+			class="form-control" id="exampleInputEmail1"
+			aria-describedby="emailHelp" placeholder="Enter email">
+	</div>
+	
+
+	<button type="submit" class="btn btn-primary">Edit</button>
+
+
+</form>

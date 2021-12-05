@@ -1,0 +1,47 @@
+<div th:fragment="index_main_slider">
+
+	<div id="carouselExampleControls" class="carousel slide"
+		data-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active" style="height: 435px;"   >
+				<img class="d-block w-100" src="img/news-700x435-1.jpg"
+					alt="First slide" style="object-fit: cover;">
+				<div class="overlay">
+					<div class="mb-1">
+						<a class="text-white" href="">Technology</a> <span
+							class="px-2 text-white">/</span> <a class="text-white" href="">January
+							01, 2045</a>
+					</div>
+					<a class="h2 m-0 text-white font-weight-bold" href="" >Sanctus
+						amet sed amet ipsum lorem. Dolores et erat et elitr sea sed</a>
+				</div>
+			</div>
+			
+			<div class="carousel-item" style="height: 435px;"   th:each="c:${posts}">
+				<img class="d-block w-100" src="img/news-700x435-2.jpg"
+					alt="First slide" style="object-fit: cover;">
+				<div class="overlay">
+					<div class="mb-1">
+						<a class="text-white" href="" th:text="${c.category.CategoryName}">Technology</a> <span
+							class="px-2 text-white">/</span> <a class="text-white" href="">January
+							01, 2045</a>
+					</div>
+					<a class="h2 m-0 text-white font-weight-bold" th:href="@{/show/{id}(id=${c.id}) }" th:text="${c.title}">Sanctus
+						amet sed amet ipsum lorem. Dolores et erat et elitr sea sed</a>
+				</div>
+			</div>
+			
+			
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleControls"
+			role="button" data-slide="prev"> <span
+			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+			class="sr-only">Previous</span>
+		</a> <a class="carousel-control-next" href="#carouselExampleControls"
+			role="button" data-slide="next"> <span
+			class="carousel-control-next-icon" aria-hidden="true"></span> <span
+			class="sr-only">Next</span>
+		</a>
+	</div>
+
+</div>
