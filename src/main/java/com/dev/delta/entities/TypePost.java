@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class TypeNews {
+public class TypePost {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +15,7 @@ public class TypeNews {
 	private Long id;
 	String name;
 	
-	public TypeNews() {
+	public TypePost() {
 		// TODO Auto-generated constructor stub
 	}
 

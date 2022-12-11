@@ -8,8 +8,9 @@
 		</div>
 		<div class="position-relative overflow-hidden mb-3" th:each="c:${categories}"
 			style="height: 80px;">
-			<img class="img-fluid w-100 h-100" src="img/cat-500x80-1.jpg"
-				style="object-fit: cover;"> <a href=""
+			<img class="img-fluid w-100 h-100" height="80" width="500" 
+			th:src="${'img/'+c.image}"
+				style="object-fit: cover;"> <a th:href="@{/show/{id}(id=${c.id}) }" 
 				class="overlay align-items-center justify-content-center h4 m-0 text-white text-decoration-none"
 				th:text="${c.CategoryName}"
 				>

@@ -64,37 +64,22 @@
 							<table class="mb-0 table table-borderless">
 								<thead>
 									<tr>
+									<th></th>
 										<th>Category Name</th>
 										<th></th>
 									</tr>
 								</thead>
 								<tbody>
+								
 									<tr  th:each="p:${posts}">
+									    <td>  <img th:src="${'photos/'+p.images}" style="width: 100px; height: 100px; object-fit: cover;"></td>
 										<td th:text="${p.title}">Mark</td>
-										<td>
-										
-										
-										
+										<td>							
 										  <button type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="mb-2 mr-2 dropdown-toggle btn btn-primary">Primary</button>
                                             <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu">
                                                 <a th:href="@{/post/{id}(id=${p.id}) }" type="button" tabindex="0" class="dropdown-item">Menus</a>
                                                
                                             </div>
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
 										</td>
 									</tr>
 

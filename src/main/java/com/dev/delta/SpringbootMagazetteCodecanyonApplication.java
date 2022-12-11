@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 import com.dev.delta.dto.CategoryDTO;
 import com.dev.delta.dto.MediaDTO;
@@ -14,7 +15,12 @@ import com.dev.delta.dto.SettingsDTO;
 import com.dev.delta.dto.SocialMediaDTO;
 import com.dev.delta.dto.TypeNewsDTO;
 import com.dev.delta.dto.UserDTO;
-import com.dev.delta.entities.TypeNews;
+import com.dev.delta.entities.TypePost;
+@ComponentScan({  "com.dev.delta.security",
+	"com.dev.delta.controllers", "com.dev.delta.services","com.dev.delta.dto",
+		"com.dev.delta.entities",
+		"com.dev.delta.repositories"}) // to
+																													// scan
 
 @SpringBootApplication
 public class SpringbootMagazetteCodecanyonApplication implements CommandLineRunner {
@@ -58,11 +64,13 @@ public class SpringbootMagazetteCodecanyonApplication implements CommandLineRunn
 		categoryDTO.populate();
 		mediaDTO.populate();
 		messageDTO.populate();
+		typeNewsDTO.populate();
 		postDTO.populate();
 		reporterDTO.populate();
 		settingsDTO.populate();
 		socialMediaDTO.populate();
-		typeNewsDTO.populate();
+		userDTO.populate();
+		
 		
 	}
 

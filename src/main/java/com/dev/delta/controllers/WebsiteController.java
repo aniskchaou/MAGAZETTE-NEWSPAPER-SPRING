@@ -40,8 +40,9 @@ public class WebsiteController {
 	 * @param model
 	 * @return
 	 */
-	@GetMapping("/contact")
+	@RequestMapping("/contact")
 	public String contact(Model model) {
+		System.out.println("dfsf");
 		return "website/contact";
 	}
 	
@@ -54,10 +55,26 @@ public class WebsiteController {
 	 */
 	@GetMapping("/")
 	public String homepage(Model model) {
-		List<Post> posts=postService.getPosts();
+		List<Post> allPosts=postService.getPosts();
 		List<Category> categories=categoryService.getCategorys();
+		List<Post> breakingPosts=postService.getBreakingPosts();
+		List<Post> latestPosts=postService.getLatestPosts();
+		List<Post> normalPosts=postService.getNormalPosts();
+		List<Post> popularPosts=postService.getPopularPosts();
+		List<Post> slidePosts=postService.getSlidePosts();
+		List<Post> trandingPosts=postService.gettrandingPosts();
+		
+		
+		
+		
 		model.addAttribute("categories", categories);
-		model.addAttribute("posts", posts);
+		model.addAttribute("breakingPosts", breakingPosts);
+		model.addAttribute("latestPosts", latestPosts);
+		model.addAttribute("normalPosts", normalPosts);
+		model.addAttribute("popularPosts", popularPosts);
+		model.addAttribute("slidePosts", slidePosts);
+		model.addAttribute("trandingPosts", trandingPosts);
+		model.addAttribute("allPosts", allPosts);
 		return "website/index";
 	}
 	
@@ -69,6 +86,8 @@ public class WebsiteController {
 	
 	@GetMapping("/dashboard")
 	public String dashboard(Model model) {
+		List<Post> allPosts=postService.getPosts();
+		model.addAttribute("posts", allPosts);
 		return "dashboard/index";
 	}
 	
@@ -83,6 +102,8 @@ public class WebsiteController {
 	public String findByCategory(@PathVariable("id") Long id, Model model) {
 		Category category=categoryService.findById(id).get();
 		List<Post> posts=postService.getByCategory(category);
+		List<Category> categories=categoryService.getCategorys();
+		model.addAttribute("categories", categories);
 		model.addAttribute("posts", posts);
 		return "website/category";
 	}

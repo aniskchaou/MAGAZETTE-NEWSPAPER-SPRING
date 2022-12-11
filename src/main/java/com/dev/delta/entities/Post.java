@@ -1,11 +1,15 @@
 package com.dev.delta.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Post {
@@ -13,10 +17,13 @@ public class Post {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Long id;
+	 @Column(length = 65555)
 	String title;
+	 @Column(length = 65555)
 	String slug;
+	 @Column(length = 65555)
 	String description;
-	
+	 @Column(length = 65555)
 	String content;
 	@ManyToOne
 	Category category;
@@ -24,7 +31,10 @@ public class Post {
 	String images;
 	
 	@ManyToOne
-	TypeNews typeNews;
+	TypePost type;
+	
+	@OneToMany
+	List<Tag> tags=new ArrayList<Tag>();
 	
 	public Post() {
 		// TODO Auto-generated constructor stub
@@ -32,6 +42,30 @@ public class Post {
 	
 	
 	
+	public List<Tag> getTags() {
+		return tags;
+	}
+
+
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
+
+
+	public TypePost getType() {
+		return type;
+	}
+
+
+
+	public void setType(TypePost type) {
+		this.type = type;
+	}
+
+
+
 	public String getImages() {
 		return images;
 	}

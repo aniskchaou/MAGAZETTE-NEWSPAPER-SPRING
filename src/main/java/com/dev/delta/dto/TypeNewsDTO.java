@@ -15,6 +15,18 @@ public class TypeNewsDTO implements DTO{
 	public void populate() {
 	  typeNews.setName("Normal");
 	  typeNewsRepository.save(typeNews);
+	  
+	  typeNews2.setName("popular");
+	  typeNewsRepository.save(typeNews2);
+	  
+	  typeNews3.setName("breaking News");
+	  typeNewsRepository.save(typeNews3);
+	  
+	  typeNews4.setName("tranding");
+	  typeNewsRepository.save(typeNews4);
+	  
+	  typeNews5.setName("slide");
+	  typeNewsRepository.save(typeNews5);
 		
 	}
 

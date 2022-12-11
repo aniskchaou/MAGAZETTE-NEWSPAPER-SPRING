@@ -17,8 +17,8 @@
 				</div>
 			</div>
 			
-			<div class="carousel-item" style="height: 435px;"   th:each="c:${posts}">
-				<img class="d-block w-100" src="img/news-700x435-2.jpg"
+			<div class="carousel-item" style="height: 435px;"   th:each="c:${normalPosts}">
+				<img class="d-block w-100" th:src="${'photos/'+c.images}"
 					alt="First slide" style="object-fit: cover;">
 				<div class="overlay">
 					<div class="mb-1">

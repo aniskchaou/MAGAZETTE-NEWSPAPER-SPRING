@@ -15,13 +15,26 @@ public class CategoryDTO implements DTO {
 	@Override
 	public void populate() {
 		// TODO Auto-generated method stub
-		category.setCategoryName(faker.lorem().characters(6));
+		category.setCategoryName(faker.book().genre());
+		category.setImage("cat1.jpg");
 		categoryRepository.save(category);
-		for (int i = 0; i < 3; i++) {
-			Category cat=new Category();
-			 cat.setCategoryName(faker.lorem().characters(6));
-		        categoryRepository.save(cat);
-		}
+		
+		category2.setCategoryName(faker.book().genre());
+		category2.setImage("cat2.jpg");
+		categoryRepository.save(category2);
+		
+		category3.setCategoryName(faker.book().genre());
+		category3.setImage("cat3.jpg");
+		categoryRepository.save(category3);
+		
+		category4.setCategoryName(faker.book().genre());
+		category4.setImage("cat4.jpg");
+		categoryRepository.save(category4);
+		
+		category5.setCategoryName(faker.book().genre());
+		category5.setImage("cat5.jpg");
+		categoryRepository.save(category5);
+		
        
 	}
 
